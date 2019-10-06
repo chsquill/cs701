@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ItemSelectorComponent } from './components/item-selector/item-selector.component';
 import { NoteItemComponent } from './components/note-item/note-item.component';
+import { ItemBoardComponent } from './components/item-board/item-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemSelectorComponent,
-    NoteItemComponent
+    NoteItemComponent,
+    ItemBoardComponent
   ],
   imports: [
     BrowserModule,

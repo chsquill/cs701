@@ -1,0 +1,4 @@
+.item-boundary {
+  height: 100%;
+  border: dotted #ccc 2px;
+}
