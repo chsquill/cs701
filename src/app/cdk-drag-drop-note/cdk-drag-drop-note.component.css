@@ -34,8 +34,3 @@
   width: 24px;
   height: 24px;
 }
-
-.example-boundary {
-  height: 100%;
-  border: dotted #ccc 2px;
-}

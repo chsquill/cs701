@@ -22,12 +22,6 @@ nav {
   padding: 20px;
 }
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 article {
   float: left;
   width: 90%;
@@ -51,4 +45,9 @@ footer {
   background-color: #777;
   text-align: center;
   color: white;
+}
+
+.item-boundary {
+  height: 100%;
+  border: dotted #ccc 2px;
 }
