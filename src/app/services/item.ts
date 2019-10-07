@@ -3,4 +3,6 @@ export class Item {
   name:			string;
   address: 	string;
   phone:    string;
+  x:        number;
+  y:        number;
 }

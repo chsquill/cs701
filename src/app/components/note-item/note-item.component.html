@@ -1,3 +1,4 @@
-<div class="example-box" cdkDragBoundary=".item-boundary" cdkDrag>
-    I can only be dragged within the dotted container
+<div class="example-box" cdkDragBoundary=".item-boundary" cdkDrag (cdkDragEnded)="onDragEnded($event)" [cdkDragFreeDragPosition]="dragPosition">
+    {{ id }} - {{ name }}
+    <button (click)="deleteItem()" type="button" name="button">Delete</button>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../../services/item';
+import { ItemProviderService } from '../../services/item-provider.service';
 
 @Component({
   selector: 'app-item-selector',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemSelectorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private provider: ItemProviderService) { }
 
   ngOnInit() {
+  }
+
+  addNote() {
+    let note: Item = new Item();
+    this.provider.addItem(note);
   }
 
 }

@@ -1,3 +1,9 @@
 <div class="item-boundary">
-  <app-note-item *ngFor="let item of items"></app-note-item>
+  <app-note-item
+    id="{{ i }}"
+    name="{{ item.name }}"
+    x="{{ item.x }}"
+    y="{{ item.y }}"
+    *ngFor="let item of items; let i = index">
+  </app-note-item>
 </div>
