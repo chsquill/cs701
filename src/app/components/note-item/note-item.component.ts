@@ -52,10 +52,17 @@ export class NoteItemComponent implements OnInit {
 
   onDragEnded(event) {
 
-    //let element = event.source.getRootElement();
-    //let boundingClientRect = element.getBoundingClientRect();
+    let element = event.source.getRootElement();
+    let boundingClientRect = element.getBoundingClientRect();
 
-    //console.log("BB:" + boundingClientRect.x + ":" + boundingClientRect.y);
+    console.log("BB:" + boundingClientRect.x + ":" + boundingClientRect.y);
+
+    let xPrime: number = +boundingClientRect.x;
+    let yPrime: number = +boundingClientRect.y;
+
+    console.log("!!!!! " + xPrime + ":" + yPrime);
+
+    //this.dragPosition = { x: xPrime, y: yPrime };
 
     //console.log("Offset:" + element.offsetLeft + ":" + element.offsetTop);
 

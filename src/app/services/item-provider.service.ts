@@ -19,26 +19,19 @@ export class ItemProviderService {
 
     let items:Item[] = this.getItems();
 
-  	let maxId: number;
+    item.id = Math.round(Math.random() * 1000);
 
-  	if (items && items.length > 0) {
-  		maxId = items[items.length - 1].id;
-  	} else {
-  		maxId = 0;
-  	}
-
-  	item.id = maxId + 1;
   	items.push(item);
   }
 
   // delete an item by id
-  deleteItem(index: number) {
+  deleteItem(id: number) {
 
     let items:Item[] = this.getItems();
 
     // find the index of friend to delete by id
-    //let index: number = items.findIndex(
-    //    f => {return (f.id == id)});
+    let index: number = items.findIndex(
+        f => {return (f.id == id)});
 
     console.log(index);
 
