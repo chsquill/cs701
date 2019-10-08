@@ -1,9 +1,53 @@
-<div class="item-boundary">
-  <app-note-item
-    id="{{ item.id }}"
-    name="{{ item.name }}"
-    x="{{ item.x }}"
-    y="{{ item.y }}"
-    *ngFor="let item of items; let i = index">
-  </app-note-item>
+<div class="example-container">
+    <div
+    cdkDropList
+    #col1List="cdkDropList"
+    [cdkDropListData]="col1"
+    [cdkDropListConnectedTo]="[col2List, col3List, col4List]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of col1" cdkDrag><button type="button" name="button">Test</button></div>
+  </div>
+</div>
+
+<div class="example-container">
+  <div
+    cdkDropList
+    #col2List="cdkDropList"
+    [cdkDropListData]="col2"
+    [cdkDropListConnectedTo]="[col1List, col3List, col4List]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <app-note-item
+      name="{{ item }}"
+      *ngFor="let item of col2" cdkDrag>
+    </app-note-item>
+  </div>
+</div>
+
+<div class="example-container">
+  <div
+    cdkDropList
+    #col3List="cdkDropList"
+    [cdkDropListData]="col3"
+    [cdkDropListConnectedTo]="[col1List, col2List, col4List]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <app-note-item
+      name="{{ item }}"
+      *ngFor="let item of col3" cdkDrag>
+    </app-note-item>
+  </div>
+</div>
+
+<div class="example-container">
+  <div
+    cdkDropList
+    #col4List="cdkDropList"
+    [cdkDropListData]="col4"
+    [cdkDropListConnectedTo]="[col1List, col2List, col3List]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of col4" cdkDrag>{{item}}</div>
+  </div>
 </div>

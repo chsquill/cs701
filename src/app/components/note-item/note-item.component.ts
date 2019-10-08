@@ -23,44 +23,44 @@ export class NoteItemComponent implements OnInit {
     //this.dragPosition = {x: this.dragPosition.x + this.x, y: this.dragPosition.y + this.y};
     //this.dragPosition = { x: this.x, y: this.y };
 
-    console.log("ZZZZZ " + this.x + ":" + this.y);
+  //  console.log("ZZZZZ " + this.x + ":" + this.y);
 
-    this.moveItem(+this.x, +this.y);
+    //this.moveItem(+this.x, +this.y);
 
-    console.log("QQQQQ " + this.dragPosition.x + ":" + this.dragPosition.y);
+  //  console.log("QQQQQ " + this.dragPosition.x + ":" + this.dragPosition.y);
   }
 
   moveItem(newX: number, newY: number) {
 
-    console.log("Moving: " + newX + ":" + newY);
+    //console.log("Moving: " + newX + ":" + newY);
 
-    let xPrime: number = +this.dragPosition.x + newX;
-    let yPrime: number = +this.dragPosition.y + newY;
+    //let xPrime: number = +this.dragPosition.x + newX;
+    //let yPrime: number = +this.dragPosition.y + newY;
 
-    console.log("!!!!! " + xPrime + ":" + yPrime);
+    //console.log("!!!!! " + xPrime + ":" + yPrime);
 
-    this.dragPosition = { x: xPrime, y: yPrime };
+    //this.dragPosition = { x: xPrime, y: yPrime };
 
-    console.log("##### " + this.dragPosition.x + ":" + this.dragPosition.y);
+    //console.log("##### " + this.dragPosition.x + ":" + this.dragPosition.y);
 
     //this.provider.deleteItem(this.id);
   }
 
   deleteItem() {
-    this.provider.deleteItem(this.id);
+    //this.provider.deleteItem(this.id);
   }
 
   onDragEnded(event) {
 
-    let element = event.source.getRootElement();
-    let boundingClientRect = element.getBoundingClientRect();
+    //let element = event.source.getRootElement();
+    //let boundingClientRect = element.getBoundingClientRect();
 
-    console.log("BB:" + boundingClientRect.x + ":" + boundingClientRect.y);
+    ///console.log("BB:" + boundingClientRect.x + ":" + boundingClientRect.y);
 
-    let xPrime: number = +boundingClientRect.x;
-    let yPrime: number = +boundingClientRect.y;
+    //let xPrime: number = +boundingClientRect.x;
+    //let yPrime: number = +boundingClientRect.y;
 
-    console.log("!!!!! " + xPrime + ":" + yPrime);
+    //console.log("!!!!! " + xPrime + ":" + yPrime);
 
     //this.dragPosition = { x: xPrime, y: yPrime };
 
