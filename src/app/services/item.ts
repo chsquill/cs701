@@ -5,4 +5,7 @@ export class Item {
   phone:    string;
   x:        number;
   y:        number;
+  type:     string;
+  text:     string;
+  text2:    string;
 }

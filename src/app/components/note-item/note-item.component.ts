@@ -11,12 +11,12 @@ export class NoteItemComponent implements OnInit {
 
   constructor(private provider: ItemProviderService) { }
 
+  @Input() item: Item;
   @Input() id: number;
   @Input() name: string;
   @Input() x: number;
   @Input() y: number;
-
-  dragPosition = { x: 0, y: 0 };
+  @Input() text: string;
 
   ngOnInit() {
 
@@ -47,10 +47,13 @@ export class NoteItemComponent implements OnInit {
   }
 
   deleteItem() {
-    //this.provider.deleteItem(this.id);
+    console.log("deleting note:" + this.item.id);
+    this.provider.deleteItem(this.item.id);
   }
 
   onDragEnded(event) {
+
+    console.log("BB:");
 
     //let element = event.source.getRootElement();
     //let boundingClientRect = element.getBoundingClientRect();

@@ -14,8 +14,17 @@ export class ItemBoardComponent implements OnInit {
 
   constructor(private provider: ItemProviderService) { }
 
+  isNote(item: Item) {
+    return item.type == "NOTE";
+  }
+
+  isQuestion(item: Item) {
+    return item.type == "QUESTION";
+  }
+
   ngOnInit() {
     this.col2 = this.provider.getItems();
+    //this.col3 = this.provider.getItems();
   }
 
   col1 = [
@@ -43,6 +52,7 @@ export class ItemBoardComponent implements OnInit {
   ];
 
  drop(event: CdkDragDrop<string[]>) {
+   console.log(event.container.data);
    if (event.previousContainer === event.container) {
      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
    } else {

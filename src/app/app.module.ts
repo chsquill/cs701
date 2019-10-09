@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
+import { QuestionItemComponent } from './components/question-item/question-item.component';
 
 
 
@@ -24,7 +25,8 @@ import {MatInputModule} from '@angular/material';
     ItemSelectorComponent,
     NoteItemComponent,
     ItemBoardComponent,
-    ItemEditDialogComponent
+    ItemEditDialogComponent,
+    QuestionItemComponent
   ], entryComponents: [
     ItemEditDialogComponent
   ],
