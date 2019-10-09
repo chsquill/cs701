@@ -19,7 +19,7 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)">
     <app-note-item
-      name="{{ item }}"
+      name="{{ item.name }}"
       *ngFor="let item of col2" cdkDrag>
     </app-note-item>
   </div>

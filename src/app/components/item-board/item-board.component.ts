@@ -15,32 +15,32 @@ export class ItemBoardComponent implements OnInit {
   constructor(private provider: ItemProviderService) { }
 
   ngOnInit() {
-    this.items = this.provider.getItems();
+    this.col2 = this.provider.getItems();
   }
 
   col1 = [
-   '1-Get to work',
-   '1-Pick up groceries',
-   '1-Go home'
+   //'1-Get to work',
+   //'1-Pick up groceries',
+   //'1-Go home'
  ];
 
- col2 = [
-   '2-Get up',
-   '2-Take a shower',
-   '2-Brush teeth'
- ];
-
+  col2 = [
+ //   '2-Get up',
+ //   '2-Take a shower',
+ //   '2-Brush teeth'
+  ];
+ //
  col3 = [
-   '3-Get up',
-   '3-Brush teeth',
-   '3-Take a shower'
- ];
-
- col4 = [
-   '4-Get up',
-   '4-Brush teeth',
-   '4-Take a shower'
- ];
+ //   '3-Get up',
+ //   '3-Brush teeth',
+ //   '3-Take a shower'
+  ];
+ //
+  col4 = [
+ //   '4-Get up',
+ //   '4-Brush teeth',
+ //   '4-Take a shower'
+  ];
 
  drop(event: CdkDragDrop<string[]>) {
    if (event.previousContainer === event.container) {

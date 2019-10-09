@@ -9,21 +9,39 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ItemSelectorComponent } from './components/item-selector/item-selector.component';
 import { NoteItemComponent } from './components/note-item/note-item.component';
 import { ItemBoardComponent } from './components/item-board/item-board.component';
+import { ItemEditDialogComponent } from './components/item-edit-dialog/item-edit-dialog.component';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemSelectorComponent,
     NoteItemComponent,
-    ItemBoardComponent
+    ItemBoardComponent,
+    ItemEditDialogComponent
+  ], entryComponents: [
+    ItemEditDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DragDropModule
+    DragDropModule,
+    MatDialogModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
