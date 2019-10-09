@@ -18,10 +18,11 @@ export class ItemSelectorComponent implements OnInit {
 
   ngOnInit() {}
 
-  addNote(text: string) {
-    let note: Item = new Item();
-    note.name = text;
-    this.provider.addItem(note);
+  addItem(text: string, type: string) {
+    let item: Item = new Item();
+    item.text = text;
+    item.type = type;
+    this.provider.addItem(item);
   }
 
   openDialog(): void {
@@ -35,7 +36,7 @@ export class ItemSelectorComponent implements OnInit {
       console.log('The dialog was closed');
       if(result){
         this.animal = result;
-        this.addNote(this.animal);
+        this.addItem(this.animal, "NOTE");
       }
     });
   }

@@ -9,6 +9,7 @@
     <ng-container *ngFor="let item of col1" >
       <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
       <app-question-item *ngIf="isType(item, 'QUESTION')" [item]="item" cdkDrag></app-question-item>
+      <app-clock-item *ngIf="isType(item, 'CLOCK')" [item]="item" cdkDrag></app-clock-item>
     </ng-container>
   </div>
 </div>
@@ -24,6 +25,7 @@
       <ng-container *ngFor="let item of col2" >
         <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
         <app-question-item *ngIf="isType(item, 'QUESTION')" [item]="item" cdkDrag></app-question-item>
+        <app-clock-item *ngIf="isType(item, 'CLOCK')" [item]="item" cdkDrag></app-clock-item>
       </ng-container>
   </div>
 </div>
@@ -39,6 +41,7 @@
     <ng-container *ngFor="let item of col3" >
       <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
       <app-question-item *ngIf="isType(item, 'QUESTION')" [item]="item" cdkDrag></app-question-item>
+      <app-clock-item *ngIf="isType(item, 'CLOCK')" [item]="item" cdkDrag></app-clock-item>
     </ng-container>
   </div>
 </div>
@@ -54,6 +57,7 @@
     <ng-container *ngFor="let item of col4" >
       <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
       <app-question-item *ngIf="isType(item, 'QUESTION')" [item]="item" cdkDrag></app-question-item>
+      <app-clock-item *ngIf="isType(item, 'CLOCK')" [item]="item" cdkDrag></app-clock-item>
     </ng-container>
   </div>
 </div>

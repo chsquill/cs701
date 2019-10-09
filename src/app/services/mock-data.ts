@@ -27,7 +27,7 @@ export const ITEMS: Item[] = [
   "phone": "123-456-7890",
   "x": 20,
   "y": 30,
-  "type": "NOTE",
+  "type": "CLOCK",
   "text": "Study",
   "text2": ""
 }
