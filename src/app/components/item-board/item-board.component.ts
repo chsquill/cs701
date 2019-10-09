@@ -14,12 +14,8 @@ export class ItemBoardComponent implements OnInit {
 
   constructor(private provider: ItemProviderService) { }
 
-  isNote(item: Item) {
-    return item.type == "NOTE";
-  }
-
-  isQuestion(item: Item) {
-    return item.type == "QUESTION";
+  isType(item: Item, type: string) {
+    return item.type == type;
   }
 
   ngOnInit() {
@@ -61,6 +57,7 @@ export class ItemBoardComponent implements OnInit {
                        event.previousIndex,
                        event.currentIndex);
    }
+   console.log(this.col4.length);
  }
 
 }

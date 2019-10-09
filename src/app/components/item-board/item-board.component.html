@@ -7,8 +7,8 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)">
     <ng-container *ngFor="let item of col1" >
-      <app-note-item *ngIf="isNote(item)" [item]="item" cdkDrag></app-note-item>
-      <app-question-item *ngIf="isQuestion(item)" [item]="item" cdkDrag></app-question-item>
+      <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
+      <app-question-item *ngIf="isType(item, 'QUESTION')" [item]="item" cdkDrag></app-question-item>
     </ng-container>
   </div>
 </div>
@@ -22,8 +22,8 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)" >
       <ng-container *ngFor="let item of col2" >
-        <app-note-item *ngIf="isNote(item)" [item]="item" cdkDrag></app-note-item>
-        <app-question-item *ngIf="isQuestion(item)" [item]="item" cdkDrag></app-question-item>
+        <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
+        <app-question-item *ngIf="isType(item, 'QUESTION')" [item]="item" cdkDrag></app-question-item>
       </ng-container>
   </div>
 </div>
@@ -37,8 +37,8 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)">
     <ng-container *ngFor="let item of col3" >
-      <app-note-item *ngIf="isNote(item)" [item]="item" cdkDrag></app-note-item>
-      <app-question-item *ngIf="isQuestion(item)" [item]="item" cdkDrag></app-question-item>
+      <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
+      <app-question-item *ngIf="isType(item, 'QUESTION')" [item]="item" cdkDrag></app-question-item>
     </ng-container>
   </div>
 </div>
@@ -52,8 +52,8 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)">
     <ng-container *ngFor="let item of col4" >
-      <app-note-item *ngIf="isNote(item)" [item]="item" cdkDrag></app-note-item>
-      <app-question-item *ngIf="isQuestion(item)" [item]="item" cdkDrag></app-question-item>
+      <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
+      <app-question-item *ngIf="isType(item, 'QUESTION')" [item]="item" cdkDrag></app-question-item>
     </ng-container>
   </div>
 </div>
