@@ -1,11 +1,14 @@
-<h1 mat-dialog-title>Hi</h1>
+<h1 mat-dialog-title>Item</h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+  <p>Please provide Information</p>
+  <mat-form-field *ngIf="data.pretext">
+    <textarea matInput placeholder="Question" [(ngModel)]="data.pretext"></textarea>
+  </mat-form-field>
   <mat-form-field>
-    <textarea matInput placeholder="Leave a comment" [(ngModel)]="data.animal"></textarea>
+    <textarea matInput placeholder="Comment" [(ngModel)]="data.text"></textarea>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
 </div>

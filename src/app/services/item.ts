@@ -7,5 +7,5 @@ export class Item {
   id:				number;
   type:     string;
   text:     string;
-  text2:    string;
+  pretext:  string;
 }

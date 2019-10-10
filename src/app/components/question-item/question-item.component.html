@@ -1,8 +1,9 @@
 <div class="example-box">
-    {{ id }}
+    {{ item.id }}
     <br>
-    {{ text }}
+    {{ item.pretext }}
     <br>
-     {{ text2 }}
+     {{ item.text }}
     <button (click)="deleteItem()" type="button" name="button">Delete</button>
+    <button (click)="editItem()" type="button" name="button">Edit</button>
 </div>

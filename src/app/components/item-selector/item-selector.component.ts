@@ -12,7 +12,7 @@ import { ItemEditDialogComponent } from '../item-edit-dialog/item-edit-dialog.co
 })
 export class ItemSelectorComponent implements OnInit {
 
-  animal: string;
+  text: string;
 
   constructor(private provider: ItemProviderService, public dialog: MatDialog) { }
 
@@ -29,14 +29,14 @@ export class ItemSelectorComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
       width: '250px',
-      data: {animal: this.animal}
+      data: {text: this.text}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       if(result){
-        this.animal = result;
-        this.addItem(this.animal, "NOTE");
+        this.text = result.text;
+        this.addItem(this.text, "NOTE");
       }
     });
   }

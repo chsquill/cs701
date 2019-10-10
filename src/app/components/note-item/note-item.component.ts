@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Item } from '../../services/item';
 import { ItemProviderService } from '../../services/item-provider.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogData } from '../../services/DialogData';
+import { ItemEditDialogComponent } from '../item-edit-dialog/item-edit-dialog.component';
 
 @Component({
   selector: 'app-note-item',
@@ -9,28 +12,42 @@ import { ItemProviderService } from '../../services/item-provider.service';
 })
 export class NoteItemComponent implements OnInit {
 
-  constructor(private provider: ItemProviderService) { }
+  constructor(private provider: ItemProviderService, public dialog: MatDialog) { }
 
   @Input() item: Item;
-  @Input() id: number;
-  @Input() name: string;
-  @Input() x: number;
-  @Input() y: number;
-  @Input() text: string;
 
   ngOnInit() {
-
-    //this.dragPosition = {x: this.dragPosition.x + this.x, y: this.dragPosition.y + this.y};
-    //this.dragPosition = { x: this.x, y: this.y };
-
-  //  console.log("ZZZZZ " + this.x + ":" + this.y);
-
-    //this.moveItem(+this.x, +this.y);
-
-  //  console.log("QQQQQ " + this.dragPosition.x + ":" + this.dragPosition.y);
   }
 
-  moveItem(newX: number, newY: number) {
+  deleteItem() {
+    console.log("deleting note:" + this.item.id);
+    this.provider.deleteItem(this.item.id);
+  }
+
+  editItem() {
+    this.openDialog();
+  }
+
+  openDialog(): void {
+
+    const dialogRef = this.dialog.open(ItemEditDialogComponent, {
+      width: '250px',
+      data: {text: this.item.text}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if(result){
+
+        console.log(result);
+
+        this.item.text = result.text;
+        //this.addItem(this.animal, "NOTE");
+      }
+    });
+  }
+
+  //moveItem(newX: number, newY: number) {
 
     //console.log("Moving: " + newX + ":" + newY);
 
@@ -44,16 +61,13 @@ export class NoteItemComponent implements OnInit {
     //console.log("##### " + this.dragPosition.x + ":" + this.dragPosition.y);
 
     //this.provider.deleteItem(this.id);
-  }
+//  }
 
-  deleteItem() {
-    console.log("deleting note:" + this.item.id);
-    this.provider.deleteItem(this.item.id);
-  }
 
-  onDragEnded(event) {
 
-    console.log("BB:");
+  //onDragEnded(event) {
+
+  //  console.log("BB:");
 
     //let element = event.source.getRootElement();
     //let boundingClientRect = element.getBoundingClientRect();
@@ -71,7 +85,7 @@ export class NoteItemComponent implements OnInit {
 
     //let parentPosition = this.getPosition(element);
     //console.log('x: ' + (boundingClientRect.x - parentPosition.left), 'y: ' + (boundingClientRect.y - parentPosition.top));
-  }
+//  }
 
   // getPosition(){
   //   return 'style="position: absolute; left:' this.x + 'px; top:' + this.y + 'px';
@@ -87,5 +101,7 @@ export class NoteItemComponent implements OnInit {
   //   }
   //   return { top: y, left: x };
   // }
+
+
 
 }

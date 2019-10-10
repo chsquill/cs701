@@ -10,14 +10,11 @@ import { DialogData } from '../../services/DialogData';
 })
 export class ItemEditDialogComponent implements OnInit {
 
-  name: string;
-
   constructor(
       public dialogRef: MatDialogRef<ItemEditDialogComponent>,
       @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
       ngOnInit() {
-
       }
 
     onNoClick(): void {
