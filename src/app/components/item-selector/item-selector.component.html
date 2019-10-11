@@ -1,8 +1,14 @@
 <ul>
-  <li><a href="#" (click)="addNote()">one</a></li>
-  <li><a href="#">two</a></li>
-  <li>{{ text }}</li>
   <li>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
+    <button mat-raised-button (click)="openDialog('NOTE')">Note</button>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog('QUESTION')">Question</button>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog('CLOCK')">Clock</button>
+  </li>
+  <li>
+    <button mat-raised-button (click)="save()">Save</button>
   </li>
 </ul>

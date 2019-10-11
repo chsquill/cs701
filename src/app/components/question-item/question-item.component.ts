@@ -33,7 +33,7 @@ export class QuestionItemComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
       width: '250px',
-      data: {pretext: this.item.pretext, text: this.item.text}
+      data: {pretext: this.item.pretext, text: this.item.text, type: "QUESTION"}
     });
 
     dialogRef.afterClosed().subscribe(result => {

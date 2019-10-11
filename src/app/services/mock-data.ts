@@ -1,4 +1,5 @@
-import { Column, Item } from './item';
+import { Item } from './item';
+import { Column } from './column';
 
  export const COLS: Column[] = [
    {

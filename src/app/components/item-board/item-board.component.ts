@@ -40,7 +40,7 @@ export class ItemBoardComponent implements OnInit {
    }
 
    // save the state to remote
-   this.provider.saveState();
+   //this.provider.saveState();
  }
 
 }

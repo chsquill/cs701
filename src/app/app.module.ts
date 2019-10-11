@@ -17,7 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import { QuestionItemComponent } from './components/question-item/question-item.component';
 import { ClockItemComponent } from './components/clock-item/clock-item.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -40,7 +40,8 @@ import { ClockItemComponent } from './components/clock-item/clock-item.component
     MatDialogModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
