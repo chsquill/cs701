@@ -7,10 +7,7 @@
 }
 
 .item-list {
-  border: solid 1px #ccc;
-  min-height: 200px;
-  background: white;
-  border-radius: 4px;
+  min-height: 800px;
   overflow: hidden;
   display: block;
 }

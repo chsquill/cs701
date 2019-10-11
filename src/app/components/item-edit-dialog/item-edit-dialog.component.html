@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Item</h1>
+<h1 mat-dialog-title>{{data.type}}</h1>
 <div mat-dialog-content>
   <p>Please provide Information</p>
   <mat-form-field *ngIf="data.type == 'QUESTION' ">
@@ -9,6 +9,6 @@
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial type="button" class="btn btn-primary">Ok</button>
+  <button mat-button (click)="onNoClick()" type="button" class="btn btn-default">Cancel</button>
 </div>

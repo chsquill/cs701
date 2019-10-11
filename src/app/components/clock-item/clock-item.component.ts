@@ -32,7 +32,7 @@ export class ClockItemComponent implements OnInit {
   openDialog(): void {
 
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
-      width: '250px',
+      width: '300px',
       data: {text: this.item.text, type: "CLOCK"}
     });
 

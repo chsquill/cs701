@@ -30,7 +30,7 @@ export class ItemSelectorComponent implements OnInit {
   openDialog(type: string): void {
 
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
-      width: '250px',
+      width: '300px',
       data: {pretext: this.pretext, text: this.text, type: type}
     });
 
