@@ -1,5 +1,11 @@
-<div class="example-box">
-    {{ item.id }} - {{ item.name }} - {{ item.text }}
-    <button (click)="deleteItem()" type="button" name="button">Delete</button>
-    <button (click)="editItem()" type="button" name="button">Edit</button>
+<div class="item-box">
+  <div class="tool-bar">
+    <button (click)="editItem()" name="button" class="glyphicon glyphicon-pencil"></button>
+    <button (click)="deleteItem()" name="button" class="glyphicon glyphicon-remove"></button>
+  </div>
+  <div class="body">
+    {{ item.id }}
+    <br>
+     {{ item.text }}
+  </div>
 </div>

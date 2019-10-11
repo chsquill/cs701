@@ -1,10 +1,10 @@
-<div class="example-container">
+<div class="item-container">
     <div
     cdkDropList
     #col1List="cdkDropList"
     [cdkDropListData]="col1"
     [cdkDropListConnectedTo]="[col2List, col3List, col4List]"
-    class="example-list"
+    class="item-list"
     (cdkDropListDropped)="drop($event)">
     <ng-container *ngFor="let item of col1" >
       <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
@@ -14,13 +14,13 @@
   </div>
 </div>
 
-<div class="example-container">
+<div class="item-container">
   <div
     cdkDropList
     #col2List="cdkDropList"
     [cdkDropListData]="col2"
     [cdkDropListConnectedTo]="[col1List, col3List, col4List]"
-    class="example-list"
+    class="item-list"
     (cdkDropListDropped)="drop($event)" >
       <ng-container *ngFor="let item of col2" >
         <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
@@ -30,13 +30,13 @@
   </div>
 </div>
 
-<div class="example-container">
+<div class="item-container">
   <div
     cdkDropList
     #col3List="cdkDropList"
     [cdkDropListData]="col3"
     [cdkDropListConnectedTo]="[col1List, col2List, col4List]"
-    class="example-list"
+    class="item-list"
     (cdkDropListDropped)="drop($event)">
     <ng-container *ngFor="let item of col3" >
       <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
@@ -46,13 +46,13 @@
   </div>
 </div>
 
-<div class="example-container">
+<div class="item-container">
   <div
     cdkDropList
     #col4List="cdkDropList"
     [cdkDropListData]="col4"
     [cdkDropListConnectedTo]="[col1List, col2List, col3List]"
-    class="example-list"
+    class="item-list"
     (cdkDropListDropped)="drop($event)">
     <ng-container *ngFor="let item of col4" >
       <app-note-item *ngIf="isType(item, 'NOTE')" [item]="item" cdkDrag></app-note-item>
