@@ -19,7 +19,11 @@ export class ItemProviderService {
        "type": "NOTE",
        "text": "Pick up milk",
        "pretext": ""
-     }]
+     },{"id": 213,
+      "type": "IMAGES",
+      "text": "https://media.giphy.com/media/o9ngTPVYW4qo8/giphy.gif",
+      "pretext": ""
+    }]
     },{
       "name" : "col2",
       "items": [{"id": 345,
@@ -37,8 +41,8 @@ export class ItemProviderService {
     },{
       "name" : "col4",
       "items": [{"id": 789,
-       "type": "NOTE",
-       "text": "Study",
+       "type": "IMAGES",
+       "text": "https://images.pexels.com/photos/1730760/pexels-photo-1730760.jpeg",
        "pretext": ""
      }]
     }

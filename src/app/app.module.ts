@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material';
 import { QuestionItemComponent } from './components/question-item/question-item.component';
 import { ClockItemComponent } from './components/clock-item/clock-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VideoItemComponent } from './components/video-item/video-item.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     ItemBoardComponent,
     ItemEditDialogComponent,
     QuestionItemComponent,
-    ClockItemComponent
+    ClockItemComponent,
+    VideoItemComponent
   ], entryComponents: [
     ItemEditDialogComponent
   ],
