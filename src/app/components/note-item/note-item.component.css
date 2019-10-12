@@ -9,11 +9,11 @@
   box-sizing: border-box;
   cursor: move;
   background: #FFFFD5;
-  font-size: 18px;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .item-body {
+  font-size: 18px;
   margin-top: 20px;
   text-align: center;
   vertical-align: middle;

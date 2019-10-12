@@ -17,26 +17,30 @@ export class ClockItemComponent extends BaseItemComponent implements OnInit {
   constructor(public provider: ItemProviderService,
               public dialog: MatDialog,
               private http: HttpClient) {
-    super(provider, dialog);
+    super(provider, dialog); // call base class
   }
 
+  // world clock url
   url: string = 'http://worldclockapi.com/api/json';
+
+  // default empty values for ui data
   data: any = { "currentDateTime" : "", "dayOfTheWeek": "",
                 "timeZoneName": "", "isDayLightSavingsTime": "" };
 
   ngOnInit() {
+    // set a timer to refresh clock every minute
     timer(0, 60000).subscribe(() => this.getTime());
   }
 
+  // get the time from world clock, fall back to local time if error
   getTime(){
-
-    console.log(this.item.text);
-
+     // remote GET request
      this.http.get<any>(this.url + '/' + this.item.text + '/now').subscribe(
      data => this.formatTime(data),
      error => this.data.currentDateTime = new Date().toLocaleDateString());
   }
 
+  // format reponse from world clock
   formatTime(wcData: any){
 
     if(!wcData.serviceResponse){
@@ -52,13 +56,18 @@ export class ClockItemComponent extends BaseItemComponent implements OnInit {
     }
   }
 
+  // overrode this from base class to call the getTime()
+  // after dialog close. This should be replaced by an
+  // event that is emmitted from the parent class
   openDialog(type: string): void {
 
+    // open dialog
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
       width: '300px',
       data: {text: this.item.text, pretext: this.item.pretext, type: type}
     });
 
+    // dialog closed
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         this.item.pretext = result.pretext;

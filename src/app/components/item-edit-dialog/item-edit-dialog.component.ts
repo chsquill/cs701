@@ -3,6 +3,7 @@ import { Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogData } from '../../services/DialogData';
 
+// edit dialog component
 @Component({
   selector: 'app-item-edit-dialog',
   templateUrl: './item-edit-dialog.component.html',
@@ -10,6 +11,7 @@ import { DialogData } from '../../services/DialogData';
 })
 export class ItemEditDialogComponent implements OnInit {
 
+  // the MAT_DIALOG_DATA to pass data to/from dialog
   constructor(
       public dialogRef: MatDialogRef<ItemEditDialogComponent>,
       @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
@@ -17,7 +19,8 @@ export class ItemEditDialogComponent implements OnInit {
       ngOnInit() {
       }
 
-    onNoClick(): void {
+    // cancel the dialog
+    onCancelClick(): void {
       console.log(this.data);
       this.dialogRef.close();
     }

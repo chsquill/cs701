@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Item } from './item';
 import { Column } from './column';
-import { COLS } from './mock-data';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemProviderService {
 
+  // url to save the board state to
   url: string = 'https://api.jsonbin.io/b/5d9e8d9f805fbf176eba8b79';
 
+  // TODO - temp data
   columnData: Column[] = [
     {
       "name" : "col1",
@@ -60,22 +60,21 @@ export class ItemProviderService {
     }
   ];
 
-  constructor(private http: HttpClient) { }
+  // http client needed for remote call
+  constructor(private http: HttpClient) {}
 
+  //
   values(data: Column[]){
-      //this.columnData = data;
-      //console.log(this.columnData);
   }
 
+  // initialize the items to the screen
   initItems() {
-
+    // TODO REMOVE ME
     if(this.columnData){
       return;
     }
 
     // http call here
-    //this.columnData = COLS;
-
     const httpOptions = {
       headers: new HttpHeaders({
         'secret-key':   '$2b$10$lGkQ1HjfOy7t1BIcSW6WOOtTyY1p5GklVupfCEgIClNjmwI/IFF1W',
@@ -86,36 +85,42 @@ export class ItemProviderService {
     this.http.get<Column[]>(this.url + '/latest', httpOptions).subscribe(
     data => this.values(data),
     error => console.error('There was an error!', error));
-
-
   }
 
+  // returns the items for the board for a single column
   getItems(col: string): Item[] {
 
+    //  init the items if needed
     this.initItems();
 
+    // search the array for column
     let column: any = this.columnData.find(
         f => {return (f.name == col)});
 
+    // return the columns items
     return column.items;
   }
 
-  // adds an item
+  // adds an item to the board
   addItem(item: Item) {
 
+    // pick a column to add to
     let column: any = this.columnData.find(
         f => {return (f.items.length < 4)});
 
     let items:Item[] = column.items;
 
+    // generate a unique id
     item.id = Math.round(Math.random() * 1000);
 
+    // add the item to the column
   	column.items.push(item);
   }
 
   // delete an item by id
   deleteItem(id: number) {
 
+    // find the item looking thru all the columns items
     for (let entry of this.columnData) {
       let items:Item[] = entry.items;
       let index: number = items.findIndex(
@@ -126,10 +131,12 @@ export class ItemProviderService {
     }
   }
 
+  // save the state off to remote json site
   saveState() {
 
     console.log("Save State : " + JSON.stringify(this.columnData));
 
+    // create header for remote call with token id
     const httpOptions = {
       headers: new HttpHeaders({
         'secret-key':   '$2b$10$lGkQ1HjfOy7t1BIcSW6WOOtTyY1p5GklVupfCEgIClNjmwI/IFF1W',
@@ -137,10 +144,9 @@ export class ItemProviderService {
       })
     };
 
+    // make remote call to save state
     this.http.put(this.url, JSON.stringify(this.columnData), httpOptions).subscribe(
     data => console.log(data),
     error => console.error('There was an error!', error));
-    //https://jsonbin.io/
   }
-
 }

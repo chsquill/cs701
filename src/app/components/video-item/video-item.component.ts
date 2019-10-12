@@ -3,6 +3,7 @@ import { ItemProviderService } from '../../services/item-provider.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BaseItemComponent } from '../core/base-item.component';
 
+// image item to be added to board
 @Component({
   selector: 'app-video-item',
   templateUrl: './video-item.component.html',

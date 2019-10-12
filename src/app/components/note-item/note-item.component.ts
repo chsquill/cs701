@@ -3,6 +3,7 @@ import { ItemProviderService } from '../../services/item-provider.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BaseItemComponent } from '../core/base-item.component';
 
+// represents a note item that can be added to board
 @Component({
   selector: 'app-note-item',
   templateUrl: './note-item.component.html',
