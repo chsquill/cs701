@@ -1,21 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Item } from '../../services/item';
+import { Component, OnInit } from '@angular/core';
 import { ItemProviderService } from '../../services/item-provider.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogData } from '../../services/DialogData';
-import { ItemEditDialogComponent } from '../item-edit-dialog/item-edit-dialog.component';
-
+import { MatDialog } from '@angular/material/dialog';
+import { BaseItemComponent } from '../core/base-item.component';
 
 @Component({
   selector: 'app-question-item',
   templateUrl: './question-item.component.html',
   styleUrls: ['./question-item.component.css']
 })
-export class QuestionItemComponent implements OnInit {
+export class QuestionItemComponent extends BaseItemComponent implements OnInit {
 
-  constructor(private provider: ItemProviderService, public dialog: MatDialog) { }
-
-  @Input() item: Item;
+  constructor(public provider: ItemProviderService, public dialog: MatDialog) {
+      super(provider, dialog);
+  }
 
   answer: boolean;
 
@@ -23,30 +20,7 @@ export class QuestionItemComponent implements OnInit {
     this.answer = false;
   }
 
-  deleteItem() {
-    this.provider.deleteItem(this.item.id);
-  }
-
-  editItem() {
-    this.openDialog();
-  }
-
   flip() {
     this.answer = !this.answer;
-  }
-
-  openDialog(): void {
-
-    const dialogRef = this.dialog.open(ItemEditDialogComponent, {
-      width: '300px',
-      data: {pretext: this.item.pretext, text: this.item.text, type: "QUESTION"}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if(result){
-        this.item.pretext = result.pretext;
-        this.item.text = result.text;
-      }
-    });
   }
 }

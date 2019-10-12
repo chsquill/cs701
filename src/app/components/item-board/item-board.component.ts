@@ -29,7 +29,6 @@ export class ItemBoardComponent implements OnInit {
   }
 
  drop(event: CdkDragDrop<string[]>) {
-   //console.log(event);
    if (event.previousContainer === event.container) {
      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
    } else {
@@ -38,9 +37,6 @@ export class ItemBoardComponent implements OnInit {
                        event.previousIndex,
                        event.currentIndex);
    }
-
-   // save the state to remote
-   //this.provider.saveState();
  }
 
 }
