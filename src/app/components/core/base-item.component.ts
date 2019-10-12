@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Item } from '../../services/item';
 import { ItemProviderService } from '../../services/item-provider.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogData } from '../../services/DialogData';
 import { ItemEditDialogComponent } from '../item-edit-dialog/item-edit-dialog.component';
 

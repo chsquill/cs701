@@ -120,7 +120,7 @@ export class ItemProviderService {
 
   saveState() {
 
-    console.log("TODOx - Save State : " + JSON.stringify(this.columnData));
+    console.log("Save State : " + JSON.stringify(this.columnData));
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -129,14 +129,9 @@ export class ItemProviderService {
       })
     };
 
-    console.log("TODO - Save State : " + JSON.stringify(this.columnData));
-
     this.http.put(this.url, JSON.stringify(this.columnData), httpOptions).subscribe(
     data => console.log(data),
     error => console.error('There was an error!', error));
-
-    //console.log("TODO - Save State : " + JSON.stringify(COLS));
-    //$2b$10$lGkQ1HjfOy7t1BIcSW6WOOtTyY1p5GklVupfCEgIClNjmwI/IFF1W
     //https://jsonbin.io/
   }
 

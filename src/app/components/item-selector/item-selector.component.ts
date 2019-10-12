@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Item } from '../../services/item';
 import { ItemProviderService } from '../../services/item-provider.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogData } from '../../services/DialogData';
 import { ItemEditDialogComponent } from '../item-edit-dialog/item-edit-dialog.component';
 
@@ -10,14 +10,12 @@ import { ItemEditDialogComponent } from '../item-edit-dialog/item-edit-dialog.co
   templateUrl: './item-selector.component.html',
   styleUrls: ['./item-selector.component.css']
 })
-export class ItemSelectorComponent implements OnInit {
+export class ItemSelectorComponent {
 
   pretext: string;
   text: string;
 
   constructor(private provider: ItemProviderService, public dialog: MatDialog) { }
-
-  ngOnInit() {}
 
   addItem(pretext: string, text: string, type: string) {
     let item: Item = new Item();
