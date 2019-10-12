@@ -17,7 +17,7 @@ export class ItemProviderService {
       "name" : "col1",
       "items": [{"id": 123,
        "type": "NOTE",
-       "text": "Pick up milk",
+       "text": "Sunday - CS701 Project presentation",
        "pretext": ""
      },{"id": 213,
       "type": "IMAGES",
@@ -28,13 +28,17 @@ export class ItemProviderService {
       "name" : "col2",
       "items": [{"id": 345,
        "type": "QUESTION",
-       "pretext": "What are Directives used for?",
-       "text": "Modifing DOM elements"
+       "pretext": "What is an Angular Directive?",
+       "text": "A directive is a function that executes whenever the Angular compiler finds it in the DOM"
      },{"id": 222,
       "type": "CLOCK",
       "text": "gmt",
       "pretext": ""
-    }]
+    },{"id": 355,
+     "type": "QUESTION",
+     "pretext": "Name three kinds of directives in Angular",
+     "text": "Components, Structural and Attribute directives"
+   }]
     },{
       "name" : "col3",
       "items": [{"id": 567,
@@ -48,7 +52,11 @@ export class ItemProviderService {
        "type": "IMAGES",
        "text": "https://images.pexels.com/photos/1730760/pexels-photo-1730760.jpeg",
        "pretext": ""
-     }]
+     },{"id": 133,
+      "type": "NOTE",
+      "text": "Pick up milk",
+      "pretext": ""
+    }]
     }
   ];
 
