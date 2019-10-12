@@ -17,6 +17,7 @@ import { QuestionItemComponent } from './components/question-item/question-item.
 import { ClockItemComponent } from './components/clock-item/clock-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VideoItemComponent } from './components/video-item/video-item.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { VideoItemComponent } from './components/video-item/video-item.component
     ItemEditDialogComponent,
     QuestionItemComponent,
     ClockItemComponent,
-    VideoItemComponent
+    VideoItemComponent,
+    HeaderComponent
   ], entryComponents: [
     ItemEditDialogComponent
   ],
