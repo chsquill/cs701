@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material';
 import { QuestionItemComponent } from './components/question-item/question-item.component';
 import { ClockItemComponent } from './components/clock-item/clock-item.component';
 import { HttpClientModule } from '@angular/common/http';
-import { VideoItemComponent } from './components/video-item/video-item.component';
+import { ImageItemComponent } from './components/image-item/image-item.component';
 import { HeaderComponent } from './components/header/header.component';
 
 
@@ -29,7 +29,7 @@ import { HeaderComponent } from './components/header/header.component';
     ItemEditDialogComponent,
     QuestionItemComponent,
     ClockItemComponent,
-    VideoItemComponent,
+    ImageItemComponent,
     HeaderComponent
   ], entryComponents: [
     ItemEditDialogComponent
