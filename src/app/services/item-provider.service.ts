@@ -30,12 +30,16 @@ export class ItemProviderService {
        "type": "QUESTION",
        "pretext": "What are Directives used for?",
        "text": "Modifing DOM elements"
-     }]
+     },{"id": 222,
+      "type": "CLOCK",
+      "text": "gmt",
+      "pretext": ""
+    }]
     },{
       "name" : "col3",
       "items": [{"id": 567,
        "type": "CLOCK",
-       "text": "Study",
+       "text": "est",
        "pretext": ""
      }]
     },{

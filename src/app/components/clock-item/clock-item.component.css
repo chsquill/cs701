@@ -10,6 +10,11 @@
   cursor: move;
   background: #99badd;
   font-size: 14px;
+  font-family: 'Comic Sans MS', bold, sans-serif;
+}
+
+.list-group-item {
+  background: #99badd;
 }
 
 .item-body {

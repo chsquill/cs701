@@ -5,6 +5,11 @@
     <button (click)="deleteItem()" name="button" class="glyphicon glyphicon-remove"></button>
   </div>
   <div class="item-body">
-     {{ item.text }}
+     <ul class="list-group">
+       <li class="list-group-item">{{ data.currentDateTime }}</li>
+       <li *ngIf="data.dayOfTheWeek" class="list-group-item">{{ data.dayOfTheWeek }}</li>
+       <li *ngIf="data.timeZoneName" class="list-group-item">{{ data.timeZoneName }}</li>
+       <li *ngIf="data.isDayLightSavingsTime" class="list-group-item">Daylight savings : {{ data.isDayLightSavingsTime }}</li>
+     </ul>
   </div>
 </div>
