@@ -1,13 +1,13 @@
 <div class="item-box">
   <div class="tool-bar">
+    <button (click)="flip()" id="answer" name="answer" class="glyphicon glyphicon-question-sign"></button>
     <button (click)="editItem()" name="button" class="glyphicon glyphicon-pencil"></button>
-    <button (click)="deleteItem()" name="button" class="glyphicon glyphicon-remove"></button>
+    <button (click)="deleteItem()" name="delete" class="glyphicon glyphicon-remove"></button>
   </div>
-  <div class="body">
-    {{ item.id }}
+  <div class="item-body">
+    <div *ngIf="!answer">{{ item.pretext }}</div>
     <br>
-    {{ item.pretext }}
-    <br>
-     {{ item.text }}
+    <label *ngIf="answer">Answer</label>
+    <div *ngIf="answer">{{ item.text }}</div>
   </div>
 </div>

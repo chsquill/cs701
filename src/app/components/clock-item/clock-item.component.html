@@ -1,11 +1,13 @@
+<script type="text/javascript">
+  alert('test');
+</script>
+
 <div class="item-box">
   <div class="tool-bar">
     <button (click)="editItem()" name="button" class="glyphicon glyphicon-pencil"></button>
     <button (click)="deleteItem()" name="button" class="glyphicon glyphicon-remove"></button>
   </div>
-  <div class="body">
-    {{ item.id }}
-    <br>
+  <div class="item-body">
      {{ item.text }}
   </div>
 </div>

@@ -17,16 +17,22 @@ export class QuestionItemComponent implements OnInit {
 
   @Input() item: Item;
 
+  answer: boolean;
+
   ngOnInit() {
+    this.answer = false;
   }
 
   deleteItem() {
-    console.log("deleting question:" + this.item.id);
     this.provider.deleteItem(this.item.id);
   }
 
   editItem() {
     this.openDialog();
+  }
+
+  flip() {
+    this.answer = !this.answer;
   }
 
   openDialog(): void {
@@ -37,7 +43,6 @@ export class QuestionItemComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       if(result){
         this.item.pretext = result.pretext;
         this.item.text = result.text;

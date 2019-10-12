@@ -21,7 +21,7 @@ export class ItemSelectorComponent implements OnInit {
 
   addItem(pretext: string, text: string, type: string) {
     let item: Item = new Item();
-    item.pretext = text;
+    item.pretext = pretext;
     item.text = text;
     item.type = type;
     this.provider.addItem(item);
@@ -31,7 +31,7 @@ export class ItemSelectorComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
       width: '300px',
-      data: {pretext: this.pretext, text: this.text, type: type}
+      data: {pretext: "", text: "", type: type}
     });
 
     dialogRef.afterClosed().subscribe(result => {
