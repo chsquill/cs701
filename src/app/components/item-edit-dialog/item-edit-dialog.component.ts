@@ -21,8 +21,6 @@ export class ItemEditDialogComponent implements OnInit {
 
     // cancel the dialog
     onCancelClick(): void {
-      console.log(this.data);
       this.dialogRef.close();
     }
-
 }
