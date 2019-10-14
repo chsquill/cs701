@@ -5,7 +5,7 @@
     <textarea matInput placeholder="Question" [(ngModel)]="data.pretext"></textarea>
   </mat-form-field>
   <mat-form-field>
-    <textarea matInput placeholder="Input" [(ngModel)]="data.text"></textarea>
+    <textarea matInput placeholder="{{ data.label }}" [(ngModel)]="data.text"></textarea>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

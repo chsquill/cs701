@@ -59,12 +59,12 @@ export class ClockItemComponent extends BaseItemComponent implements OnInit {
   // overrode this from base class to call the getTime()
   // after dialog close. This should be replaced by an
   // event that is emmitted from the parent class
-  openDialog(type: string): void {
+  openDialog(type: string, label: string): void {
 
     // open dialog
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
       width: '300px',
-      data: {text: this.item.text, pretext: this.item.pretext, type: type}
+      data: {text: this.item.text, pretext: this.item.pretext, type: type, label: label}
     });
 
     // dialog closed

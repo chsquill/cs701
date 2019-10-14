@@ -5,7 +5,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogData } from '../../services/DialogData';
 import { ItemEditDialogComponent } from '../item-edit-dialog/item-edit-dialog.component';
 
-// item slector on left side - 'nav' 
+// item slector on left side - 'nav'
 @Component({
   selector: 'app-item-selector',
   templateUrl: './item-selector.component.html',
@@ -25,12 +25,12 @@ export class ItemSelectorComponent {
   }
 
   // opens a blank dialog box for adding item
-  openDialog(type: string): void {
+  openDialog(type: string, label: string): void {
 
     // open dialog
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
       width: '300px',
-      data: {pretext: "", text: "", type: type}
+      data: {pretext: "", text: "", type: type, label: label}
     });
 
     // called when dialog closes

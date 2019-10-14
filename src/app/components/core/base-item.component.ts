@@ -19,17 +19,17 @@ export class BaseItemComponent {
   }
 
   // edit an item on the board
-  editItem(type: string) {
-    this.openDialog(type);
+  editItem(type: string, label: string) {
+    this.openDialog(type, label);
   }
 
   // opens a dialog box
-  openDialog(type: string): void {
+  openDialog(type: string, label: string): void {
 
     // open box
     const dialogRef = this.dialog.open(ItemEditDialogComponent, {
       width: '300px',
-      data: {text: this.item.text, pretext: this.item.pretext, type: type}
+      data: {text: this.item.text, pretext: this.item.pretext, type: type, label: label}
     });
 
     // box closed

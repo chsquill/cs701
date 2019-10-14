@@ -31,7 +31,6 @@ export class ItemProviderService {
 
   // http client needed for remote call
   constructor(private http: HttpClient) {
-    console.log("constructor");
     this.initItems();
   }
 
@@ -41,8 +40,6 @@ export class ItemProviderService {
     // nested loop to load the items
     for (let column of data) {
       for(let item of column.items){
-        console.log(item);
-
          this.addItem(item, column);
       }
     }
