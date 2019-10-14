@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Item } from './item';
 import { Column } from './column';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { MOCKDATA } from './mockdata';
 
 @Injectable({
   providedIn: 'root'
@@ -11,68 +12,44 @@ export class ItemProviderService {
   // url to save the board state to
   url: string = 'https://api.jsonbin.io/b/5d9e8d9f805fbf176eba8b79';
 
-  // TODO - temp data
+  // data for board
   columnData: Column[] = [
     {
       "name" : "col1",
-      "items": [{"id": 123,
-       "type": "NOTE",
-       "text": "Sunday - CS701 Project presentation",
-       "pretext": ""
-     },{"id": 213,
-      "type": "IMAGES",
-      "text": "https://media.giphy.com/media/o9ngTPVYW4qo8/giphy.gif",
-      "pretext": ""
-    }]
+      "items": []
     },{
       "name" : "col2",
-      "items": [{"id": 345,
-       "type": "QUESTION",
-       "pretext": "What is an Angular Directive?",
-       "text": "A directive is a function that executes whenever the Angular compiler finds it in the DOM"
-     },{"id": 222,
-      "type": "CLOCK",
-      "text": "gmt",
-      "pretext": ""
-    },{"id": 355,
-     "type": "QUESTION",
-     "pretext": "Name three kinds of directives in Angular",
-     "text": "Components, Structural and Attribute directives"
-   }]
+      "items": []
     },{
       "name" : "col3",
-      "items": [{"id": 567,
-       "type": "CLOCK",
-       "text": "est",
-       "pretext": ""
-     }]
+      "items": []
     },{
       "name" : "col4",
-      "items": [{"id": 789,
-       "type": "IMAGES",
-       "text": "https://images.pexels.com/photos/1730760/pexels-photo-1730760.jpeg",
-       "pretext": ""
-     },{"id": 133,
-      "type": "NOTE",
-      "text": "Pick up milk",
-      "pretext": ""
-    }]
+      "items": []
     }
   ];
 
   // http client needed for remote call
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    console.log("constructor");
+    this.initItems();
+  }
 
-  //
-  values(data: Column[]){
+  // load items from remote site
+  loadItemsFromSaved(data: Column[]){
+
+    // nested loop to load the items
+    for (let column of data) {
+      for(let item of column.items){
+        console.log(item);
+
+         this.addItem(item, column);
+      }
+    }
   }
 
   // initialize the items to the screen
   initItems() {
-    // TODO REMOVE ME
-    if(this.columnData){
-      return;
-    }
 
     // http call here
     const httpOptions = {
@@ -83,15 +60,12 @@ export class ItemProviderService {
     };
 
     this.http.get<Column[]>(this.url + '/latest', httpOptions).subscribe(
-    data => this.values(data),
-    error => console.error('There was an error!', error));
+    data => this.loadItemsFromSaved(data),
+    error => this.loadItemsFromSaved(MOCKDATA));
   }
 
   // returns the items for the board for a single column
   getItems(col: string): Item[] {
-
-    //  init the items if needed
-    this.initItems();
 
     // search the array for column
     let column: any = this.columnData.find(
@@ -102,11 +76,18 @@ export class ItemProviderService {
   }
 
   // adds an item to the board
-  addItem(item: Item) {
+  addItem(item: Item, col?: Column) {
+
+    let column: any;
 
     // pick a column to add to
-    let column: any = this.columnData.find(
+    if(col){
+      column = this.columnData.find(
+        f => {return (f.name == col.name)});
+    }else{
+      column = this.columnData.find(
         f => {return (f.items.length < 4)});
+    }
 
     let items:Item[] = column.items;
 
